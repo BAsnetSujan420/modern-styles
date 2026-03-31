@@ -80,6 +80,14 @@ const Item = styled.details`
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   overflow: hidden;
+
+  & * {
+    margin: 0;
+  }
+
+  & > p {
+    padding-block: 1rem;
+  }
 `;
 
 const Question = styled.summary`
@@ -88,6 +96,11 @@ const Question = styled.summary`
   margin-inline-start: 1rem;
   list-style-position: outside;
   cursor: pointer;
+
+  &::marker {
+    font-size: 0.75em;
+    color: hsl(0 0% 40%);
+  }
 `;
 
 const Answer = styled.p``;
