@@ -88,6 +88,20 @@ const Item = styled.details`
   & > p {
     padding-block: 1rem;
   }
+
+  &::details-content {
+    color: hsl(0 0% 78%);
+    font-size: 1rem;
+    block-size: 0;
+    transition:
+      block-size 1s,
+      content-visibility 1s;
+    transition-behavior: allow-discrete;
+  }
+
+  &:open::details-content {
+    block-size: auto;
+  }
 `;
 
 const Question = styled.summary`
