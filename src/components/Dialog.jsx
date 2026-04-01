@@ -43,7 +43,7 @@ const Title = styled.h1`
   font-size: 18px;
   letter-spacing: 0.6px;
   margin: 0;
-  color: #ccc;
+  color: inherit;
 `;
 
 const IconButton = styled.button`
@@ -82,6 +82,32 @@ const ActionButton = styled.button`
   }
 `;
 
+const Popover = styled.div`
+  padding: 30px 14px 10px;
+  border-radius: 8px;
+  background: #ccc;
+  color: #111;
+  border: 1px solid #333;
+  width: 400px;
+  height: 200px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  transition: all 0.2s ease;
+
+  &:popover-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+`;
+
+const PopoverContent = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export default function ConfirmDialog() {
   return (
     <>
@@ -108,11 +134,11 @@ export default function ConfirmDialog() {
 
         <Footer>
           <ActionButton
-            commandfor="confirm-dialog"
-            command="close"
-            value="cancel"
+            id="more-btn"
+            popovertarget="more-popover"
+            popovertargetaction="toggle"
           >
-            Ok
+            Show More
           </ActionButton>
           <ActionButton
             commandfor="confirm-dialog"
@@ -122,6 +148,26 @@ export default function ConfirmDialog() {
             Close
           </ActionButton>
         </Footer>
+
+        {/* Popover */}
+        <Popover id="more-popover" popover="auto" anchor="more-btn">
+          <PopoverContent>
+            <Title> This is a headline</Title>
+
+            <Body>
+              This is extra information inside a popover. Click anywhere outside
+              the popover or close button.
+            </Body>
+            <Footer>
+              <ActionButton
+                popoverTarget="more-popover"
+                popoverTargetAction="hide"
+              >
+                Close
+              </ActionButton>
+            </Footer>
+          </PopoverContent>
+        </Popover>
       </StyledDialog>
     </>
   );
