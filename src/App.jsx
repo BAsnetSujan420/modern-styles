@@ -1,3 +1,4 @@
+import BlogPosts from './components/BlogPosts';
 import CardGrid from './components/CardGrid';
 import ConfirmDialog from './components/Dialog';
 import FAQ from './components/FAQ';
@@ -11,7 +12,8 @@ function App() {
       {/* <ConfirmDialog /> */}
       {/* <RelativeColor /> */}
       {/* <ImageFilters /> */}
-      <CardGrid />
+      {/* <CardGrid /> */}
+      <BlogPosts />
     </>
   );
 }
