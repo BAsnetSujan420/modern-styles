@@ -14,6 +14,7 @@ const Card = styled.div`
   grid-column: span 2;
 
   display: grid;
+  grid-template-columns: subgrid;
   grid-template-rows: min-content 1fr;
   gap: 1em;
 
