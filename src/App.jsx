@@ -1,3 +1,4 @@
+import CardGrid from './components/CardGrid';
 import ConfirmDialog from './components/Dialog';
 import FAQ from './components/FAQ';
 import ImageFilters from './components/ImageFilters';
@@ -9,7 +10,8 @@ function App() {
       {/* <FAQ /> */}
       {/* <ConfirmDialog /> */}
       {/* <RelativeColor /> */}
-      <ImageFilters />
+      {/* <ImageFilters /> */}
+      <CardGrid />
     </>
   );
 }
