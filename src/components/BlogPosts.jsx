@@ -28,6 +28,8 @@ const Card = styled.div`
   border: 1px solid #cacaca;
   border-radius: 6px;
   padding: 16px;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
 `;
 
 const CardHeader = styled.div`
